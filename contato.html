@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contato</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    .background {
+      background-image: url('assets/contato.png'); /* ajuste o caminho */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      text-align: center;
+    }
+
+    .background::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: white;
+      z-index: 1;
+      margin-bottom: 30px;
+    }
+
+    .cards {
+      display: flex;
+      gap: 30px;
+      z-index: 1;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 15px;
+      padding: 20px 30px;
+      min-width: 150px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      backdrop-filter: blur(10px);
+    }
+
+    .card:hover {
+      background-color: rgba(0, 123, 255, 0.6);
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    #c1:hover{
+      background-color: rgba(0, 123, 255, 0.6);
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    #c2:hover{
+        background-color: #FE0264;
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    #c3:hover{
+        background-color: rgba(255, 0, 0, 0.6);
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-size: 14px;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="background">
+    <h1>Fale conosco!</h1>
+    <div class="cards">
+      <a class="card" id="c1" href="https://www.facebook.com/profile.php?id=100081803107082&sk=photos&locale=pt_BR" target="_blank">Facebook</a>
+      <a class="card" id="c2" href="https://www.instagram.com/resgate.cadu/" target="_blank">Instagram</a>
+      <a class="card" id="c3" href="mailto:carloseduardo.dev99@gmail.com">Email</a>
+    </div>
+    <footer>
+      Desenvolvido por Cadu para AlphaMed
+    </footer>
+  </div>
+</body>
+</html>
