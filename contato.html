@@ -51,6 +51,7 @@
       z-index: 1;
       flex-wrap: wrap;
       justify-content: center;
+      margin-bottom: 30px;
     }
 
     .card {
@@ -68,28 +69,32 @@
     }
 
     .card:hover {
-      background-color: rgba(0, 123, 255, 0.6);
       transform: scale(1.05);
       cursor: pointer;
     }
 
-    #c1:hover{
-      background-color: rgba(0, 123, 255, 0.6);
-      transform: scale(1.05);
-      cursor: pointer;
-    }
+    #c1:hover { background-color: rgba(0, 123, 255, 0.6); }
+    #c2:hover { background-color: #FE0264; }
+    #c3:hover { background-color: rgba(255, 0, 0, 0.6); }
 
-    #c2:hover{
-        background-color: #FE0264;
-      transform: scale(1.05);
-      cursor: pointer;
-    }
+    #c4 {
+  margin-top: 15px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+  z-index: 1;
+}
 
-    #c3:hover{
-        background-color: rgba(255, 0, 0, 0.6);
-      transform: scale(1.05);
-      cursor: pointer;
-    }
+#c4:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
 
     footer {
       position: absolute;
@@ -110,6 +115,7 @@
       <a class="card" id="c2" href="https://www.instagram.com/resgate.cadu/" target="_blank">Instagram</a>
       <a class="card" id="c3" href="mailto:carloseduardo.dev99@gmail.com">Email</a>
     </div>
+    <a class="card" id="c4" href="index.html">Voltar</a>
     <footer>
       Desenvolvido por Cadu para AlphaMed
     </footer>
