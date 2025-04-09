@@ -1,110 +1,151 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trauma - Artigos sobre APH</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0a0a0a;
-            color: #00f0ff;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trauma - Artigos sobre APH</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        header {
-            background-color: #111;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid #00f0ff;
-        }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: url('assets/xabcde.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            color: #00f0ff;
-        }
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.8);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
 
-        nav {
-            background-color: #000;
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #00f0ff;
-        }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
 
-        nav a {
-            color: #00f0ff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
+    header h1 {
+      font-size: 3rem;
+      color: #ff3c38;
+      margin-bottom: 10px;
+    }
 
-        nav a:hover {
-            color: #fff;
-        }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-        main {
-            padding: 30px;
-            max-width: 900px;
-            margin: auto;
-        }
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+      background-color: transparent;
+      padding: 10px 20px;
+      border: 2px solid #ff3c38;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
 
-        section {
-            margin-bottom: 60px;
-        }
+    nav a:hover {
+      background-color: #ff3c38;
+      box-shadow: 0px 0px 10px red;
+      color: #000;
+    }
 
-        section h2 {
-            color: #00f0ff;
-            border-bottom: 1px solid #00f0ff;
-            padding-bottom: 5px;
-        }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
 
-        section p {
-            color: #ccc;
-            line-height: 1.6;
-        }
-    </style>
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border-left: 5px solid #ff3c38;
+      padding: 20px 30px;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #dddddd;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .card {
+        padding: 15px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-
+  <div class="overlay">
     <header>
-        <h1>Trauma</h1>
+      <h1>Trauma</h1>
+      <nav>
+        <a href="#primaria">Avaliação Primária</a>
+        <a href="#secundaria">Avaliação Secundária</a>
+        <a href="#queimados">Grandes Queimados</a>
+      </nav>
     </header>
 
-    <nav>
-        <a href="#avaliacao-primaria">Avaliação Primária</a>
-        <a href="#avaliacao-secundaria">Avaliação Secundária</a>
-        <a href="#grandes-queimados">Grandes Queimados</a>
-    </nav>
+    <main class="container">
+      <section id="primaria" class="card">
+        <h2>Avaliação Primária</h2>
+        <p>A Avaliação Primária segue o protocolo XABCDE e busca identificar rapidamente situações que ameaçam a vida. É a base de todo atendimento emergencial e deve ser feita com agilidade e precisão.</p>
+      </section>
 
-    <main>
-        <section id="avaliacao-primaria">
-            <h2>Avaliação Primária</h2>
-            <p>
-                Aqui você poderá inserir artigos, textos explicativos ou estudos sobre a Avaliação Primária no Atendimento Pré-Hospitalar.
-                A Avaliação Primária segue a abordagem ABCDE e tem como objetivo identificar e tratar ameaças imediatas à vida.
-            </p>
-        </section>
+      <section id="secundaria" class="card">
+        <h2>Avaliação Secundária</h2>
+        <p>Após a estabilização do paciente, realiza-se a Avaliação Secundária — um exame físico completo e coleta de histórico para entender a extensão dos danos e orientar condutas subsequentes.</p>
+      </section>
 
-        <section id="avaliacao-secundaria">
-            <h2>Avaliação Secundária</h2>
-            <p>
-                A Avaliação Secundária é uma abordagem mais completa e detalhada do paciente, feita após a estabilização das funções vitais.
-                Nesta seção você pode adicionar artigos clínicos, protocolos e observações práticas.
-            </p>
-        </section>
-
-        <section id="grandes-queimados">
-            <h2>Grandes Queimados</h2>
-            <p>
-                Nesta parte você pode abordar o manejo de pacientes com queimaduras extensas, incluindo critérios de gravidade,
-                tratamento inicial, transporte e cuidados hospitalares.
-            </p>
-        </section>
+      <section id="queimados" class="card">
+        <h2>Grandes Queimados</h2>
+        <p>O manejo de pacientes grandes queimados requer atenção imediata à via aérea, hidratação adequada, controle da dor e prevenção de infecções. Aqui verá como prosseguir no seu atendimento!.</p>
+      </section>
     </main>
 
+    <footer>
+      Desenvolvido por Cadu para estudo sobre APH.
+    </footer>
+  </div>
 </body>
 </html>
