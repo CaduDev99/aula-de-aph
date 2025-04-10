@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página educativa sobre atendimento primário a vítimas de trauma no APH, com foco no protocolo XABCDE.">
+  <link rel="icon" type="image/png" href="assets/Favicon.png">
+  <link rel="apple-touch-icon" href="assets/Favicon.png">
+  <title>Avaliação Primária</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Michroma&family=Wallpoet&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      background-color: #000;
+      line-height: 1.6;
+    }
+
+    header {
+      background-image: url('assets/primaria.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+    }
+    
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+      box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.616);
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      animation: fadeIn 1.2s ease-in;
+      font-family: 'Michroma', sans-serif;
+      font-size: 3rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.608);
+    }
+
+    header p {
+      animation: fadeIn 1.2s ease-in;
+      text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.56);
+      font-family: 'Wallpoet', sans-serif;
+      font-size: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    main section {
+      transition: ease-in-out 0.3s;
+      min-height: 50vh;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 2rem;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    main section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.589);
+    }
+
+    section h2, section p {
+      position: relative;
+      z-index: 2;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section p {
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    .content-box {
+      border: 2px solid red;
+      max-width: 800px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.833);
+      padding: 15px;
+      border-radius: 20px;
+      box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.589);
+    }
+
+    #s1 {
+      background-color: rgba(255, 255, 255, 0.216);
+      color: black;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    #s1 p {
+      text-align: justify;
+      text-indent: 30px;
+      line-height: 1.5em;
+    }
+
+    #s2 {
+      text-align: justify;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #000;
+    }
+    
+    #s2 p {
+      text-indent: 30px;
+    }
+
+    #d1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #111;
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    section:nth-of-type(1) {
+      background-image: url('https://images.unsplash.com/photo-1551601651-1efadf45e39e?auto=format&fit=crop&w=1470&q=80');
+    }
+
+    section:nth-of-type(2) {
+      background-image: url('assets/carreta.png');
+    }
+
+    section:nth-of-type(3) {
+      background-image: url('https://images.unsplash.com/photo-1603399681608-1aaf2fbe60a2?auto=format&fit=crop&w=1470&q=80');
+    }
+
+    #xacbde-detalhado {
+      background-color: #111;
+      padding: 3rem 2rem;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      position: relative;
+    }
+
+    .accordion {
+      max-width: 800px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .accordion-item {
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.475);
+    }
+
+    .accordion-header {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      text-align: left;
+      background-color: #222;
+      color: rgb(255, 0, 0);
+      font-weight: bold;
+      font-size: 1.2rem;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      pointer-events: auto;
+      position: relative;
+      z-index: 3; 
+    }
+
+    .accordion-header:hover {
+      background-color: #ff0000cb;
+      color: white;
+      box-shadow: 0 0 100px rgb(255, 0, 0);
+      
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      background-color: #1a1a1a;
+      color: #ccc;
+      transition: max-height 0.4s ease-in-out;
+    }
+
+    .accordion-content p {
+      padding: 1rem 1.5rem;
+      margin: 0;
+    }
+
+    .accordion-item.active .accordion-content {
+      max-height: 500px; /* Ajustado para um valor alto para garantir que todo o conteúdo seja visível */
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      header, main section {
+        background-attachment: scroll;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1.2rem;
+      }
+
+      section h2 {
+        font-size: 1.5rem;
+      }
+
+      section p {
+        font-size: 1rem;
+      }
+
+      .content-box {
+        padding: 10px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .content-box {
+        padding: 8px;
+      }
+
+      section {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Atendendo a vítima de trauma</h1>
+    <p>Tempo é Vida!</p>
+  </header>
+  <main>
+    <section id="s1">
+      <div class="content-box">
+        <article>
+          <h2>Avaliação Primária</h2>
+          <p>O atendimento pré-hospitalar (APH) a vítimas de trauma é uma das intervenções mais críticas na emergência, exigindo rapidez, precisão e priorização da vida. Trauma, definido como lesão física causada por energia externa (mecânica, térmica, elétrica ou química), pode variar de fraturas e luxações a hemorragias graves e lesões internas. No SBV (Suporte Básico de Vida), o foco inicial é garantir a segurança da cena, avaliar rapidamente a vítima (usando o protocolo XABCDE: vias aéreas, respiração, circulação, deficiência neurológica e exposição) e estabilizar condições críticas, como controle de sangramentos e imobilização de suspeitas de fraturas. O objetivo é minimizar agravamentos e preparar a vítima para o transporte ao atendimento definitivo, sempre respeitando os limites do socorrista e as condições do ambiente.</p>
+        </article>
+      </div>
+    </section>
+    <section id="d1">  
+      <div id="s2" class="content-box">
+        <article>
+          <h2>XABCDE</h2>
+          <p>O protocolo XABCDE é uma abordagem sistemática utilizada no Atendimento Pré-Hospitalar (APH) para avaliar e priorizar o atendimento de vítimas de trauma grave. Ele adapta o tradicional ABCDE, inserindo o "X" como passo inicial para destacar o controle de hemorragias externas catastróficas, uma das principais causas de morte evitáveis no trauma. A sequência é: X - Hemorragia Exsanguinante, A - Vias Aéreas (Airway), B - Respiração (Breathing), C - Circulação (Circulation), D - Déficit Neurológico (Disability) e E - Exposição/Ambiente (Exposure/Environment). Esse método orienta o socorrista a agir rapidamente em situações críticas, como sangramentos massivos, antes de prosseguir para a estabilização das funções vitais, garantindo uma resposta eficiente e estruturada no SBV.</p>
+        </article>
+      </div>
+    </section>
+    <section id="xacbde-detalhado">
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false" aria-controls="content-x">X - Hemorragia Exsanguinante</button>
+          <div class="accordion-content" id="content-x">
+            <p>Priorize o controle imediato de sangramentos externos graves com torniquetes, curativos compressivos ou hemostáticos.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false" aria-controls="content-a">A - Vias Aéreas</button>
+          <div class="accordion-content" id="content-a">
+            <p>Verifique se a via aérea está desobstruída. Aplique manobras como inclinação da cabeça, elevação do queixo ou cânulas orofaríngeas se necessário.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false" aria-controls="content-b">B - Respiração</button>
+          <div class="accordion-content" id="content-b">
+            <p>Avalie esforço respiratório, expansibilidade torácica e presença de sons respiratórios. Forneça oxigênio se necessário.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false" aria-controls="content-c">C - Circulação</button>
+          <div class="accordion-content" id="content-c">
+            <p>Cheque pulso, perfusão periférica e sinais de choque. Controle sangramentos menores e inicie medidas de suporte circulatório.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false" aria-controls="content-d">D - Déficit Neurológico</button>
+          <div class="accordion-content" id="content-d">
+            <p>Realize avaliação neurológica inicial (como escala de Glasgow), resposta pupilar e motora.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false" aria-controls="content-e">E - Exposição / Ambiente</button>
+          <div class="accordion-content" id="content-e">
+            <p>Remova roupas com cuidado para identificar lesões ocultas e evite hipotermia protegendo a vítima do ambiente.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    Desenvolvido por Cadu para estudo sobre APH.
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const headers = document.querySelectorAll(".accordion-header");
+
+      console.log("Número de botões encontrados:", headers.length);
+
+      headers.forEach((header, index) => {
+        console.log(`Botão ${index + 1}:`, header.textContent);
+
+        header.addEventListener("click", () => {
+          console.log("Header clicado:", header.textContent); 
+          const item = header.parentElement;
+          const content = header.nextElementSibling;
+          const isActive = item.classList.contains("active");
+
+          document.querySelectorAll('.accordion-item').forEach(i => {
+            if (i !== item) {
+              i.classList.remove('active');
+              i.querySelector('.accordion-content').style.maxHeight = null;
+              i.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+            }
+          });
+
+
+          item.classList.toggle("active");
+          header.setAttribute('aria-expanded', !isActive);
+
+          if (item.classList.contains("active")) {
+            content.style.maxHeight = content.scrollHeight + "px"; 
+          } else {
+            content.style.maxHeight = null;
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
