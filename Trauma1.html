@@ -176,10 +176,10 @@
 
     #xacbde-detalhado {
       background-color: #111;
-      padding: 3rem 2rem;
-      color: white;
-      font-family: 'Segoe UI', sans-serif;
-      position: relative;
+  padding: 3rem 2rem;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
     }
 
     .accordion {
@@ -216,7 +216,6 @@
       background-color: #ff0000cb;
       color: white;
       box-shadow: 0 0 100px rgb(255, 0, 0);
-      
     }
 
     .accordion-content {
@@ -233,10 +232,10 @@
     }
 
     .accordion-item.active .accordion-content {
-      max-height: 500px; /* Ajustado para um valor alto para garantir que todo o conteúdo seja visível */
+      max-height: 1000px;
+      transition: max-height 0.5s ease;
     }
 
-    /* Responsividade */
     @media (max-width: 768px) {
       header, main section {
         background-attachment: scroll;
@@ -301,7 +300,56 @@
         <div class="accordion-item">
           <button class="accordion-header" aria-expanded="false" aria-controls="content-x">X - Hemorragia Exsanguinante</button>
           <div class="accordion-content" id="content-x">
-            <p>Priorize o controle imediato de sangramentos externos graves com torniquetes, curativos compressivos ou hemostáticos.</p>
+            <section>
+              <p>A letra "X" representa exsanguinação, ou seja, a perda de sangue externa grave que pode levar rapidamente ao choque hipovolêmico e à morte se não for controlada imediatamente. A inclusão do "X" no protocolo reflete uma mudança significativa na abordagem ao trauma, priorizando o controle de hemorragias externas antes mesmo do manejo das vias aéreas (representado pela letra "A"). Essa alteração foi motivada por dados epidemiológicos que apontam as hemorragias graves como a principal causa de morte evitável em cenários de trauma, superando até a obstrução das vias aéreas em termos de letalidade imediata.</p>
+              <p>No contexto do XABCDE, o "X" foca em:</p>
+              <ul>
+                <li>Identificação rápida de sangramentos externos significativos.</li>
+                <li>Intervenção imediata para estancar a hemorragia e prevenir a perda de volume sanguíneo crítico.</li>
+                <li>Prevenção do choque hipovolêmico, uma condição em que a redução do volume de sangue compromete a perfusão de órgãos vitais.</li>
+              </ul>
+
+              <p>A diferença fundamental entre o "X" e a letra "C" (circulação) no protocolo é que o "X" aborda hemorragias externas visíveis e compressíveis, enquanto o "C" foca na avaliação de hemorragias internas e no estado circulatório geral do paciente.</p>
+            </section>
+            <section>
+              <h2>Tipos de Hemorragias</h2>
+              <p>As hemorragias podem ser classificadas com base em sua origem anatômica, tipo de vaso afetado e visibilidade. Compreender essas categorias é crucial para o manejo eficaz no contexto do "X".</p>
+              <ol>
+                <li>Classificação por Origem.</li>
+                <ul>
+                  <li>Hemorragias Externas: O sangue sai do corpo através de ferimentos visíveis, como lacerações, perfurações ou amputações. Estas são o foco principal do "X".</li>
+                  <li>Hemorragias Internas: O sangue se acumula em cavidades corporais (como peritônio, pleura ou pericárdio) e não é visível externamente. São abordadas na etapa "C".</li>
+                </ul>
+                <li>Classificação por Tipo de Vaso</li>
+                <ul>
+                  <li>Hemorragia Arterial</li>
+                  <ul>
+                    <li>Características: Sangue vermelho vivo, em jato pulsátil, sincronizado com os batimentos cardíacos.</li>
+                    <li>Gravidade: Altamente perigosa devido à alta pressão e ao volume rápido de perda sanguínea.</li>
+                    <li>Exemplo: Ruptura de uma artéria femoral em um trauma penetrante.</li>
+                    </ul>
+                  <li>Hemorragia Venosa:</li>
+                    <ul>
+                      <li>Características: Sangue vermelho escuro, fluxo contínuo e mais lento, sem pulsos evidentes.</li>
+                      <li>Gravidade: Pode ser grave em veias de grande calibre, como a veia jugular.</li>
+                      <li>Exemplo: Laceração de veias em uma extremidade.</li>
+                    </ul>
+                  <li>Hemorragia Capilar:</li>
+                  <ul>
+                    <li>Características: Sangue exsuda lentamente, em pequenas quantidades, com coloração intermediária.</li>
+                    <li>Gravidade: Geralmente menos perigosa, fácil de controlar com pressão direta.</li>
+                    <li>Exemplo: Abrasões ou cortes superficiais na pele.</li>
+                  </ul>
+                </ul>
+                <li>Classificação por Gravidade</li>
+                    <ul>
+                      <li>Leve: Perda de até 15% do volume sanguíneo (cerca de 750 mL em um adulto). Geralmente não compromete a hemodinâmica.</li>
+                      <li>Moderada: Perda de 15-30% (750-1500 mL). Pode causar taquicardia e leve hipotensão.</li>
+                      <li>Grave: Perda de 30-40% (1500-2000 mL). Provoca choque hipovolêmico, com taquicardia intensa, hipotensão e alteração do nível de consciência.</li>
+                      <li>Crítica: Perda acima de 40% (>2000 mL). Risco iminente de morte, com falência circulatória e parada cardiorrespiratória.</li>
+                    </ul>
+              </ol>
+            </section>
           </div>
         </div>
         <div class="accordion-item">
@@ -345,34 +393,19 @@
     document.addEventListener("DOMContentLoaded", () => {
       const headers = document.querySelectorAll(".accordion-header");
 
-      console.log("Número de botões encontrados:", headers.length);
-
-      headers.forEach((header, index) => {
-        console.log(`Botão ${index + 1}:`, header.textContent);
-
+      headers.forEach(header => {
         header.addEventListener("click", () => {
-          console.log("Header clicado:", header.textContent); 
           const item = header.parentElement;
-          const content = header.nextElementSibling;
-          const isActive = item.classList.contains("active");
 
-          document.querySelectorAll('.accordion-item').forEach(i => {
+          // Fecha os outros
+          document.querySelectorAll(".accordion-item").forEach(i => {
             if (i !== item) {
-              i.classList.remove('active');
-              i.querySelector('.accordion-content').style.maxHeight = null;
-              i.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+              i.classList.remove("active");
             }
           });
 
-
+          // Alterna o atual
           item.classList.toggle("active");
-          header.setAttribute('aria-expanded', !isActive);
-
-          if (item.classList.contains("active")) {
-            content.style.maxHeight = content.scrollHeight + "px"; 
-          } else {
-            content.style.maxHeight = null;
-          }
         });
       });
     });
